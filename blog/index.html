@@ -3,7 +3,7 @@
 
 	<head>
 		<meta charset="UTF-8">
-		<title>春</title>
+		<title>伊丽莎白镇★独白</title>
 		<style>
 			html,
 			body {
@@ -23,15 +23,6 @@
 				background-position: center center;
 				background-size: cover;
 			}
-			.CherryBlossoms{
-			    position: absolute;
-				top: 0;
-			    left: 0;
-			    right: 0;
-			    bottom: 0;
-			    opacity: 0.5;
-				z-index: 1;
-			}
 			.content {
 				width: 800px;
 				height: 400px;
@@ -42,13 +33,12 @@
 				margin-left: -400px;
 				border-radius: 8px;
 				-webkit-box-shadow: 0px 0px 0px 5px #f4433647;
-				box-shadow: 0px 0px 0px 5px #f4433647;
+				box-shadow: 0 10px 20px #f4433647;
 				overflow: hidden;
-				z-index: 2;
+				z-index: 1;
 				padding: 50px;
 				box-sizing: border-box;
 			}
-			
 			.content::before {
 				content: '';
 				position: absolute;
@@ -76,119 +66,60 @@
 			    left: 30px;
 			    top: 30px;
 			    background-color: #FFFFFF;
-			    opacity: 0.1;
+			    opacity: 0.2;
 			}
-		
-			.content h1 {
+			.CherryBlossoms{
+			    position: absolute;
+				top: 0;
+			    left: 0;
+			    right: 0;
+			    bottom: 0;
+			    opacity: 0.5;
+				z-index: 2;
+			}
+			.preposition{
+				width: 800px;
+				height: 400px;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				margin-top: -200px;
+				margin-left: -400px;
+				border-radius: 8px;
+				overflow: hidden;
+				z-index: 3;
+				padding: 50px;
+				box-sizing: border-box;
+			}
+			
+			h1 {
 				text-align: center;
 				margin-bottom: 20px;
-				color: #D99E7E;
-				text-shadow: 1px 1px 1px #715343, -1px -1px 1px #ffbd99;
-				font-weight: bold;
 			}
-			
-			.content p {
+	
+			p {
 				line-height: 1.7;
-				color: #D99E7E;
-				font-weight: bold;
-				letter-spacing: 2px;
-				text-shadow: 1px 1px 1px #715343;
-			}
-			.content .shumin{
-				margin-top: 50px;
-				text-align: right;
 			}
 			
-			.coding {
-				display: none;
-				position: fixed;
-				width: 100px;
-				height: 50px;
-				z-index: 10;
-			    top: 0;
-			    right: 0;
-			}
-			.coding-content {
+			.text {
 				position: absolute;
-				top: 0;
-				left: 25%;
-				right: 25%;
-				bottom: 0;
-				background: hsla(0, 0%, 0%, 0.2);
-				border-radius: 0 0 50% 50%;
+				top: 108px;
+				left: 500px;
 			}
-			.coding-left {
-				position: absolute;
-				bottom: 50%;
-				left: 0;
-				right: 75%;
-				top: 0;
-				background: radial-gradient(farthest-side at left bottom, transparent 99%, hsla(0, 0%, 0%, 0.2) 100%);
-			}
-			.coding-right {
-				position: absolute;
-				bottom: 50%;
-				left: 75%;
-				right: 0;
-				top: 0;
-				background: radial-gradient(farthest-side at right bottom, transparent 99%, hsla(0, 0%, 0%, 0.2) 100%);
-			}
-			.coding-content a {
-				display: block;
-				width: 80%;
-				height: 80%;
-				margin: 10%;
-				background: hsla(4, 90%, 58%, 0.28);
-				color: white;
-				border-radius: 50%;
-				line-height: 40px;
-				text-align: center;
-			}
-			
-			
-			
 			
 		</style>
 		<body>
 			<!--背景图-->
 			<div class="container">
-				<div class="coding" id="coding">
-					<div class="coding-left"></div>
-					<div class="coding-content">
-						<a id="coding-num">3</a>
-					</div>
-					<div class="coding-right"></div>
-				</div>
 				<div class="content">
 					<canvas id="loveStar" class="loveStar"></canvas>
-					<h1>个人博客</h1>
-					<p>这两样东西有着天壤之别，失败和惨败。失败只不过是因为成功没有露面，任何傻瓜都会失败。但是惨败，惨败是带有神话色彩的灾难。惨败是讲给别人听的故事，让他人暗自庆幸，因为灾难没落在他的头上。</p>
-					<p class="shumin">—— 伊丽莎白镇★独白</p>
 				</div>
 				<canvas id="sakura" class="CherryBlossoms"></canvas>
+				<div class="preposition">
+					<h1>伊丽莎白镇</h1>
+					<p>有人曾经说：这两样东西有着天壤之别，失败和惨败。失败只不过是因为成功没有露面，任何傻瓜都会失败。但是惨败，惨败是带有神话色彩的灾难。惨败是讲给别人听的故事，让他人暗自庆幸，因为灾难没落在他的头上。</p>
+				</div>
 			</div>
-			<!--coding-->
-			<script>
-				document.onreadystatechange = subSomething;//当页面加载状态改变的时候执行这个方法.
-				function subSomething() 
-				{ 
-				 if(document.readyState == "complete"){ //当页面加载状态为完全结束时进入 
-				 	document.getElementById("coding").style.display="block";
-				 	var num = 3;
-				    var numDom = document.getElementById("coding-num");
-				        var time = setInterval(function(){
-				        	num--;
-				        	numDom.innerHTML = num;
-				        	if(num == 1){
-				        		clearInterval(time)
-				        		window.location.href="https://yan01290129.github.io/blog/index.html"
-				        	}
-				        },1000)
-//				        
-				    }
-				}
-				
-			</script>
 			<!--爱心-->
 			<script type="text/javascript">
 			(function(){
@@ -2173,16 +2104,10 @@
 			    drawEffect(effectLib.finalComp);
 	
 			    unuseEffect(effectLib.finalComp);
-			    
-				
 	
 			    
 	
 			    gl.enable(gl.DEPTH_TEST);
-//			    for(var a=1;a++;a<9999){
-//			    	
-//			    }
-//				console.log("sssss")
 	
 			}
 	
@@ -2367,8 +2292,6 @@
 			    if(animating) requestAnimationFrame(animate);
 	
 			    render();
-			    
-			    /*这里*/
 	
 			}
 	
