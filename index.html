@@ -172,19 +172,20 @@
 				document.onreadystatechange = subSomething;//当页面加载状态改变的时候执行这个方法.
 				function subSomething() 
 				{ 
-				 if(document.readyState == "complete"){ //当页面加载状态为完全结束时进入 
+				 if(document.readyState == "complete"){ //当页面加载状态为完全结束时进入
 				 	document.getElementById("coding").style.display="block";
 				 	var num = 5;
 				    var numDom = document.getElementById("coding-num");
-				        var time = setInterval(function(){
-				        	num--;
-				        	numDom.innerHTML = num;
-				        	if(num == 1){
-				        		clearInterval(time)
-//				        		window.location.href="https://yan01290129.github.io/blog/index.html"
-				        		window.location.href="blog/index.html"
-				        	}
-				        },1000)
+				    numDom.innerHTML = num;
+				    var time = setInterval(function(){
+				        num--;
+				       	numDom.innerHTML = num;
+				       	if(num == 1){
+				       		clearInterval(time)
+//				       		window.location.href="https://yan01290129.github.io/blog/index.html"
+				       		window.location.href="blog/index.html"
+				       	}
+				     },1000) 
 //				        
 				    }
 				}
