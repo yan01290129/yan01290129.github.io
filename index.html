@@ -155,7 +155,7 @@
 				<div class="coding" id="coding">
 					<div class="coding-left"></div>
 					<div class="coding-content">
-						<a id="coding-num">3</a>
+						<a id="coding-num"></a>
 					</div>
 					<div class="coding-right"></div>
 				</div>
@@ -174,14 +174,15 @@
 				{ 
 				 if(document.readyState == "complete"){ //当页面加载状态为完全结束时进入 
 				 	document.getElementById("coding").style.display="block";
-				 	var num = 3;
+				 	var num = 5;
 				    var numDom = document.getElementById("coding-num");
 				        var time = setInterval(function(){
 				        	num--;
 				        	numDom.innerHTML = num;
 				        	if(num == 1){
 				        		clearInterval(time)
-				        		window.location.href="https://yan01290129.github.io/blog/index.html"
+//				        		window.location.href="https://yan01290129.github.io/blog/index.html"
+				        		window.location.href="blog/index.html"
 				        	}
 				        },1000)
 //				        
